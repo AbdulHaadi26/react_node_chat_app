@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
 import { loginUser} from "../../redux/actions/userActions";
 
 
 const Login = ({
     loginUser
 }) => {
+
+    let history = useHistory();
 
     const [form, setForm] = useState({
         email: '',
@@ -31,6 +34,7 @@ const Login = ({
             <StyledInput placeholder="Enter email" name="email" type="email" value={form.email} onChange={e => handleInput(e)} required />
             <StyledInput placeholder="Enter password" name="password" type="password" value={form.password} onChange={e => handleInput(e)} required />
             <StyledButton type="submit">Login</StyledButton>
+            <StyledButton type="button" onClick={e => history.push('/register')}>Create Account</StyledButton>
         </StyledCard>
     </StyledWrapper>
 };

@@ -37,6 +37,7 @@ const Register = ({
             <StyledInput placeholder="Enter email" name="email" type="email" value={form.email} onChange={e => handleInput(e)} required />
             <StyledInput placeholder="Enter password" name="password" type="password" value={form.password} onChange={e => handleInput(e)} required />
             <StyledButton type="submit">Register</StyledButton>
+            <StyledButton type="button" onClick={e => history.push('/login')}>Login</StyledButton>
         </StyledCard>
     </StyledWrapper>
 };
